@@ -6,8 +6,8 @@
 
 {% block content %}
 
-<div class="inner cover">
-    <h1 class="cover-heading">Приветствую тебя, гость этой страницы!</h1>
+<div class="cover inner cover-container">
+    <h1 class="cover-container-heading">Приветствую тебя, гость этой страницы!</h1>
     <p class="lead">
         Чтобы попасть на основную страницу, тебе нужно решить несколько загадок!
     </p>
@@ -26,25 +26,22 @@
                         Если сложить наши дни рождения, то получится эта дата
                     </p>
                 </div>
-                <div class="panel-body row">
 
-                    <div class="col-sm-2">
+                <div class="panel-body form-inline">
+
                         <div class="input-group">
                             <span class="input-group-addon">День</span>
                             <input name="day" class="form-control"
                                    type="number"
                                    step="1" min="1" max="31" >
                         </div>
-                    </div>
 
-                    <div class="col-sm-2">
                         <div class="input-group">
                             <span class="input-group-addon">Месяц</span>
                             <input name="month" class="form-control"
                                    type="number"
                                    step="1" min="1" max="12" >
                         </div>
-                    </div>
 
                 </div>
             </div>
@@ -55,17 +52,11 @@
                         Имена персонажей одной любимой песни. Начинаются на "Ш..." и "И.."
                     </p>
                 </div>
-                <div class="panel-body row">
-
-                    <div class="col-sm-3">
+                <div class="panel-body form-inline">
                         <input name="p1" class="form-control "
                                type="text" placeholder="Ш...">
-                    </div>
-                    <div class="col-sm-3">
-                        <input name="p2" class="form-control col-sm-2"
+                        <input name="p2" class="form-control"
                                type="text" placeholder="И..">
-                    </div>
-
                 </div>
             </div>
 
