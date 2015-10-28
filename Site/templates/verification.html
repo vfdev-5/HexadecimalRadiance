@@ -12,13 +12,73 @@
         Чтобы попасть на основную страницу, тебе нужно решить несколько загадок!
     </p>
 
-    <p class="lead">
-        1) Первая загадка
-    </p>
+    <form class="form-group"
+          action=""
+          method="POST">
+        {% csrf_token %}
+        <div class="">
 
-    <p class="lead">
-        <a href="#" class="btn btn-lg btn-default">Пройти на Google Play Store</a>
-    </p>
+            <div class="panel panel-default">
+
+
+                <div class="panel-heading">
+                    <p class="lead">
+                        Если сложить наши дни рождения, то получится эта дата
+                    </p>
+                </div>
+                <div class="panel-body row">
+
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <span class="input-group-addon">День</span>
+                            <input name="day" class="form-control"
+                                   type="number"
+                                   step="1" min="1" max="31" >
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="input-group">
+                            <span class="input-group-addon">Месяц</span>
+                            <input name="month" class="form-control"
+                                   type="number"
+                                   step="1" min="1" max="12" >
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="lead">
+                        Имена персонажей одной любимой песни. Начинаются на "Ш..." и "И.."
+                    </p>
+                </div>
+                <div class="panel-body row">
+
+                    <div class="col-sm-3">
+                        <input name="p1" class="form-control "
+                               type="text" placeholder="Ш...">
+                    </div>
+                    <div class="col-sm-3">
+                        <input name="p2" class="form-control col-sm-2"
+                               type="text" placeholder="И..">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <button type="submit" class="btn btn-primary">
+            Проверить решения
+        </button>
+    </form>
+
+
 
 
 </div>

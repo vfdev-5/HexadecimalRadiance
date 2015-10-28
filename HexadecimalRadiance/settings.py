@@ -106,3 +106,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Use cache to store if guest user can see the main part
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'client-cache',
+        # Cache is available 15 minutes
+        'TIMEOUT': 300,
+    }
+}

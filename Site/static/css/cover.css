@@ -26,6 +26,7 @@ a:hover {
 
 html,
 body {
+  font-family: "Times New Roman", Georgia, Serif;
   height: 100%;
   background-image: url(/static/images/radiance.jpg);
   background-size:cover;
@@ -168,3 +169,12 @@ body {
     width: 1024px;
   }
 }
+
+/*
+ * Customize
+ */
+
+.panel {
+  background-color: rgba(0,0,20,.5);
+}
+

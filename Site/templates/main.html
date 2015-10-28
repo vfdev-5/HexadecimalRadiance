@@ -29,6 +29,8 @@
 
 {% block content %}
 
+{% if can_access %}
+
 <div class="inner cover">
     <h1 class="cover-heading">Здравствуй, Алёна!</h1>
     <p class="lead">
@@ -42,5 +44,16 @@
         <a href="#" class="btn btn-lg btn-default">Пройти на Google Play Store</a>
     </p>
 </div>
+
+{% else %}
+
+<div class="inner cover">
+    <p class="lead">
+        К сожалению, тебе доступ не разрешен.
+        <a href="/">Попробуй еще раз разгадать загадки</a>
+    </p>
+</div>
+
+{% endif%}
 
 {% endblock content %}
