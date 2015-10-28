@@ -52,7 +52,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'HexademicalRadiance.urls'
+ROOT_URLCONF = 'HexadecimalRadiance.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'HexademicalRadiance.wsgi.application'
+WSGI_APPLICATION = 'HexadecimalRadiance.wsgi.application'
 
 
 # Database
