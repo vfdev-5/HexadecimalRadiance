@@ -1,15 +1,26 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.core.cache import cache
+from django.core.exceptions import ObjectDoesNotExist
+from models import Data
 
 
 # Create your views here.
 def main(request, template_name='main.html'):
 
-
     context={}
     if cache.get('can_access', False):
         context['can_access']=True
+
+        try:
+            data = Data.objects.get(name='default')
+            print "Data: ", data.name, data.appFile, data.googlePlayUrl
+            context['googlePlayUrl'] = data.googlePlayUrl
+            context['appFile'] = data.appFile
+        except ObjectDoesNotExist:
+            print "Default data is not found"
+            pass
+
 
     return render(request, template_name, context)
 

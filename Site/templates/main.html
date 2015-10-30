@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 <!----------------------------------------------------------->
 <!-------------------------- HEADER ------------------------->
 <!----------------------------------------------------------->
@@ -31,6 +31,7 @@
 
 {% if can_access %}
 
+
 <div class="inner cover">
     <h1 class="cover-heading">Здравствуй, Алёна!</h1>
     <p class="lead">
@@ -41,16 +42,64 @@
         Скачай его!
     </p>
     <p class="lead">
-        <a href="https://play.google.com/store" class="btn btn-lg btn-default">Пройти на Google Play Store</a>
+        {% if googlePlayUrl %}
+            <a href="{{googlePlayUrl}}" class="btn btn-lg btn-default">Пройти на Google Play Store</a>
+        {% else %}
+            <a href="https://play.google.com/store" class="btn btn-lg btn-default">Пройти на Google Play Store</a>
+        {% endif %}
+    </p>
+
+    <p class="lead">
+        Ты можешь также скачать это приложение непосредственно
+        {% if appFile %}
+            <a href="/media/{{appFile}}" style="color:#abc">отсюда</a>.
+        {% else %}
+            <a href="{% static 'CleanForest.apk' %}" style="color:#abc">отсюда</a>.
+        {% endif %}
+    </p>
+
+    <p class="">
+        Чтобы установить приложение, твой телефон может попросить в настройках безопасности поставить
+        галочку на
+        <a href="http://ccm.net/faq/33126-samsung-galaxy-s4-allow-the-installation-of-apps-from-unknown-sources" style="color:#abc">
+            "Разрешение установки приложений из неизвестных источников".
+        </a>
+        Пожалуйста, поставь галочку и установи приложение из загрузок. После установки не забудь снова убрать галочку на
+        "Разрешение установки приложений из неизвестных источников".
     </p>
 </div>
+
+
+{% comment %}
+<div class="inner cover">
+    <h1 class="cover-heading">Здравствуй, Алёна!</h1>
+    <p class="lead">
+        Если ты видишь эту страницу, значит ты уже получила мою посылку.
+        Хорошо.
+        Теперь нажми на кнопку там тебя ждет специальное андроид приложение.
+        Скачай и установи его!
+    </p>
+    <p class="lead">
+        <a href="{% static 'CleanForest.apk' %}" class="btn btn-lg btn-default">Скачать приложение</a>
+    </p>
+
+    <p class="">
+        Чтобы установить приложение, твой телефон может попросить в настройках безопасности поставить
+        галочку на "Разрешение установки приложений из неизвестных источников".
+        Поставь галочку и установи приложение из загрузок. После установки не забудь снова убрать галочку на
+        "Разрешение установки приложений из неизвестных источников".
+    </p>
+
+</div>
+{% endcomment %}
+
 
 {% else %}
 
 <div class="inner cover">
     <p class="lead">
         К сожалению, тебе доступ не разрешен.
-        <a href="/">Попробуй еще раз разгадать загадки</a>
+        <a href="/" style="color:#abc">Попробуй еще раз разгадать загадки</a>
     </p>
 </div>
 
